@@ -14,14 +14,14 @@ import java.time.LocalDateTime;
 @Data
 public class TaskDto {
 
-    @NotNull(message = "Id must be not null", groups = OnUpdate.class)
+    @NotNull(message = "Id must be not null.", groups = OnUpdate.class)
     private Long id;
 
-    @NotNull(message = "Title must be not null", groups = {OnUpdate.class, OnCreate.class})
-    @Length(max = 255, message = "Title must be smaller then 255 symbols", groups = {OnUpdate.class, OnCreate.class})
+    @NotNull(message = "Title must be not null.", groups = {OnCreate.class, OnUpdate.class})
+    @Length(max = 255, message = "Title length must be smaller than 255 symbols.", groups = {OnCreate.class, OnUpdate.class})
     private String title;
 
-    @Length(max = 255, message = "Description must be smaller then 255 symbols", groups = {OnUpdate.class, OnCreate.class})
+    @Length(max = 255, message = "Description length must be smaller than 255 symbols.", groups = {OnCreate.class, OnUpdate.class})
     private String description;
 
     private Status status;
